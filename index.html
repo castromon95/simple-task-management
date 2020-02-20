@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Simple Task Management App</title>
+    <meta name="description" content="Simple task management app">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous">
+  </head>
+  <body class="task-app">
+    <div class="container-fluid p-0 d-flex h-100">
+      <div class="card main-container m-md-auto m-0 overflow-hidden">
+        <div class="card-body">
+          <div class="p-2">
+            <div class="row">
+              <div class="col-10">
+                <h2 class="mb-2">Simple Task Manager</h2>
+              </div>
+              <div class="col-2 text-right">
+                <button type="button" class="btn btn-success" onclick="openModal();">+</button>
+              </div>
+            </div>
+            <hr class="my-2"/>
+          </div>
+          <div class="alert alert-info mb-0 mx-2" role="alert">
+            Click the button to create a new task!
+          </div>
+          <div class="overflow-auto list-container p-2"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="taskModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="taskModalTitle">Task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="title">Task title</label>
+                <input class="form-control" id="title" maxlength="15" placeholder="Go to the GYM, Study algebra...">
+              </div>
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input class="form-control" id="date" maxlength="15" placeholder="Tomorrow, 02/02/2020...">
+              </div>
+              <div class="form-group">
+                <label for="level">Priority level</label>
+                <select class="form-control" id="level">
+                  <option value="primary">Low</option>
+                  <option value="warning">Medium</option>
+                  <option value="danger">High</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" rows="3" placeholder="Task description..."></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="submitTask();">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
